@@ -94,9 +94,10 @@
 
 #pragma Public APIs
 
--(void)requestAuthorization:(id)args
+-(void)requestAuthorization:(id)callback
 {
-    id callback = [args objectAtIndex:0];
+    ENSURE_SINGLE_ARG(callback, KrollCallback);
+	ENSURE_UI_THREAD(requestAuthorization, callback);
     
     // Verify if iOS version needs authentication to use EventStore
     // iOS 6 or later needs
@@ -104,7 +105,7 @@
         
         [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
             if (callback != nil) {
-                [self _fireEventToListener:@"callback"
+                [self _fireEventToListener:@"authorized"
                                 withObject:@{@"authorized" : [NSString stringWithFormat:@"%d", granted] }
                                   listener:callback
                                 thisObject:nil];
@@ -113,12 +114,13 @@
         
     } else {
         if (callback != nil) {
-            [self _fireEventToListener:@"callback"
+            [self _fireEventToListener:@"authorized"
                             withObject:@{@"authorized" : [NSString stringWithFormat:@"%d", 1] }
                               listener:callback
                             thisObject:nil];
         }
     }
+    
 }
 
 
