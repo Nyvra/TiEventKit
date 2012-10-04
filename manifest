@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: TiEventKit
+author: Rafael Kellermann Streit
+license: MIT
+copyright: Copyright (c) 2012 by Nyvra Software
+
+
+# these should not be edited
+name: tieventkit
+moduleid: ti.eventkit
+guid: 651197ae-0c27-4dc8-8a0e-d2ef727ee20e
+platform: iphone
+minsdk: 2.1.3.v20120927181611
