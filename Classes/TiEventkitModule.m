@@ -36,7 +36,7 @@
 	// you *must* call the superclass
 	[super startup];
 	
-	NSLog(@"[INFO] %@ loaded",self);
+    NSLog(@"[INFO] %@ loaded",self);
     
     // Create an EKEventStore instance
     eventStore = [[EKEventStore alloc] init];
