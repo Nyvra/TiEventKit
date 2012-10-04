@@ -104,7 +104,7 @@
         [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
             if (callback != nil) {
                 [self _fireEventToListener:@"authorized"
-                                withObject:@{@"authorized" : [NSString stringWithFormat:@"%d", granted] }
+                                withObject:@{@"authorized" : [NSNumber numberWithBool:granted] }
                                   listener:callback
                                 thisObject:nil];
             }
@@ -113,7 +113,7 @@
     } else {
         if (callback != nil) {
             [self _fireEventToListener:@"authorized"
-                            withObject:@{@"authorized" : [NSString stringWithFormat:@"%d", 1] }
+                            withObject:@{@"authorized" : [NSNumber numberWithInt:1] }
                               listener:callback
                             thisObject:nil];
         }
