@@ -92,8 +92,6 @@
 
 #pragma Public APIs
 
-#pragma Public APIs
-
 -(void)requestAuthorization:(id)callback
 {
     ENSURE_SINGLE_ARG(callback, KrollCallback);
