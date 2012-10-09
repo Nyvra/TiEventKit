@@ -113,7 +113,7 @@
     } else {
         if (callback != nil) {
             [self _fireEventToListener:@"authorized"
-                            withObject:@{@"authorized" : [NSNumber numberWithInt:1] }
+                            withObject:@{@"authorized" : [NSNumber numberWithBool:TRUE] }
                               listener:callback
                             thisObject:nil];
         }
