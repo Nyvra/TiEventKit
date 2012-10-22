@@ -5,7 +5,7 @@ Titanium Appcelerator module that implements iOS Event Kit framework.
 ## Supports
 
 * iOS 4.0+
-* Titanium SDK 2.1.3.GA
+* Titanium SDK 2.1.3.RC
 
 ## What can I do with this module?
 
